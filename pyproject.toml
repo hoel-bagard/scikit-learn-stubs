@@ -1,0 +1,29 @@
+[project]
+name = "scikit-learn-stubs"
+version = "0.0.0"
+authors = [{ name = "Bagard Hoel" }]
+description = "scikit-learn stubs from the Microsoft python-type-stubs repository"
+keywords = ["scikit-learn", "sklearn", "stubs"]
+readme = "README.md"
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Developers",
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+
+[project.urls]
+"Homepage" = "https://github.com/hoel-bagard/scikit-learn-stubs"
+"Bug Tracker" = "https://github.com/hoel-bagard/scikit-learn-stubs/issues"
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"
