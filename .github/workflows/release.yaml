@@ -41,7 +41,6 @@ jobs:
     outputs:
       new_version: ${{ env.NEW_VERSION }}
 
-  # Update the package version and create the GitHub release.
   create-release:
     name: Create release
     runs-on: ubuntu-latest
@@ -55,7 +54,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      # TODO: Move the commit/tag creation to the first job to avoid duplicating code ?
       - name: Checkout Microsoft's Python Type Stubs
         uses: actions/checkout@v5
         with:
@@ -113,7 +111,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release create $GH_RELEASE_TAG --verify-tag --title $GH_RELEASE_TAG
 
-      # TODO: This should be a different job, but the changes were not present during the checkout, and I did not have time to debug it.
+      # Publish to PyPI
       - name: Install uv
         uses: astral-sh/setup-uv@v6
         with:
