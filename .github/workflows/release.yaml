@@ -35,7 +35,7 @@ jobs:
           if git diff --exit-code; then
             echo "NEW_VERSION=true" >> $GITHUB_ENV
           else
-            echo "NEW_VERSION=true" >> $GITHUB_ENV
+            echo "NEW_VERSION=false" >> $GITHUB_ENV
           fi
 
     outputs:
@@ -89,8 +89,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # git add src
-          # git commit -m "feat: add upstream changes"
+          git add src
+          git commit -m "feat: add upstream changes"
           git add pyproject.toml
           git commit -m "chore: bump version to v$NEW_VERSION"
           git push
