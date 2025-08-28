@@ -35,7 +35,7 @@ jobs:
           if git diff --exit-code; then
             echo "NEW_VERSION=true" >> $GITHUB_ENV
           else
-            echo "NEW_VERSION=false" >> $GITHUB_ENV
+            echo "NEW_VERSION=true" >> $GITHUB_ENV
           fi
 
     outputs:
