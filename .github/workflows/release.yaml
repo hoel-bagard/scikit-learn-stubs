@@ -35,7 +35,7 @@ jobs:
           if git diff --exit-code; then
             echo "NEW_VERSION=true" >> $GITHUB_ENV
           else
-            echo "NEW_VERSION=false" >> $GITHUB_ENV
+            echo "NEW_VERSION=true" >> $GITHUB_ENV
           fi
 
     outputs:
@@ -65,9 +65,9 @@ jobs:
       - name: Update stubs
         run: |
           # Remove old version
-          rm -rf src/scikit_learn-stubs
+          rm -rf src/sklearn-stubs
           # Replace it with the new one
-          mv original-stubs/stubs/sklearn src/scikit_learn-stubs
+          mv original-stubs/stubs/sklearn src/sklearn-stubs
 
       - name: Bump the version
         run: |
